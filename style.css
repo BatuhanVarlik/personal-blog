@@ -59,6 +59,11 @@ header, section {
     margin: 0 auto ;
     padding: 2rem;
     border-bottom: 1px solid #ddd;
+    transition: all 3s ease;
+}
+header:hover{
+    opacity: 0;
+    transform: translate(100%);
 }
 #home {
     text-align: center;

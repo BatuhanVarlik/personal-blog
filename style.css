@@ -161,7 +161,7 @@ header:hover {
 }
 
 @media screen and (max-width: 768px) {
-
+    
     #skills-list,
     #hobbies-list {
         grid-template-columns: 1fr;
@@ -183,5 +183,9 @@ header:hover {
         border: 2px solid black;
         text-align: center;
         border-radius: 10px;
+    }
+    iframe{
+        width: 300px;
+        height: auto;
     }
 }

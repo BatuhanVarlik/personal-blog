@@ -3,71 +3,89 @@
     padding: 0;
     box-sizing: border-box;
 }
+
 html {
     scroll-behavior: smooth;
 }
-body{
-    font-family:'Times New Roman', Times, serif;
+
+body {
+    font-family: 'Times New Roman', Times, serif;
     background-color: white;
-    color:black;
+    color: black;
     line-height: 1.6;
     font-size: 18px;
 }
-h1, h2, h3 {
+
+h1,
+h2,
+h3 {
     margin-bottom: 10px;
     color: darkblue;
 }
+
 #navbar {
-    position:sticky;
-    display:flex;
-    top: 0; 
-    width:100%;
+    position: sticky;
+    display: flex;
+    top: 0;
+    width: 100%;
     justify-content: center;
     background-color: lightgray;
     z-index: 10;
     transition: padding 1s;
 }
-#navbar:hover{
+
+#navbar:hover {
     padding: 20px;
 }
+
 #nav-list {
-    list-style : none;
+    list-style: none;
     display: flex;
-    gap: 20px;
+    gap: 1rem;
     padding: 5px;
 }
-.nav-items{
-    transition: transform 1s ease;
-}
-.nav-items:hover{
-    transform: scale(1.1);
-}
-#navbar a {
-    text-decoration: none;
-    transition: background-color 0.3s ease;
+
+.nav-items {
+    transition: all 1s ease;
     padding: 0.5rem 2rem;
-    color:rgb(34, 34, 136);
-}
-#navbar a:hover {
-    background-color: rgb(34, 34, 136);
-    color: white;
-    border-radius: 5px;
+
 }
 
-header, section {
-    max-width: 960px;
-    margin: 0 auto ;
+.nav-items a {
+    text-decoration: none;
+    transition: all 0.3s ease;
+    color: rgb(34, 34, 136);
+}
+
+.nav-items a:hover {
+    color: white;
+}
+
+.nav-items:hover {
+    transform: scale(1.1);
+    border-radius: 5px;
+    background-color: rgb(34, 34, 136);
+    color: white;
+}
+
+
+header,
+section {
+    margin: 0 auto;
     padding: 2rem;
     border-bottom: 1px solid #ddd;
     transition: all 3s ease;
 }
-header:hover{
+
+header:hover {
     opacity: 0;
     transform: translate(100%);
 }
+
 #home {
     text-align: center;
 }
+
 #skills-list {
     list-style: none;
     display: grid;
@@ -82,18 +100,21 @@ header:hover{
     padding: 1rem;
     text-align: center;
     transition: all 1s ease;
-}  
-.skills-card:hover{
-    background-color:blue ;
+}
+
+.skills-card:hover {
+    background-color: blue;
     color: white;
     transform: scale(1.1);
-} 
+}
+
 #hobbies-list {
     list-style: none;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 1.5rem;
 }
+
 .hobbies-card {
     background-color: lightgreen;
     border: 1px solid black;
@@ -102,33 +123,65 @@ header:hover{
     text-align: center;
     transition: all 1s ease;
 }
-.hobbies-card:hover{
-    background-color:green ;
+
+.hobbies-card:hover {
+    background-color: green;
     color: white;
     transform: scale(1.1);
 }
-.tek-grid{
+
+.tek-grid {
     list-style: none;
     margin-top: 1.5rem;
 
 }
+
 #projects-list {
     list-style: none;
     display: grid;
     gap: 1.5rem;
     text-align: center;
 }
+
 .projects-card {
     background-color: lightcoral;
     border: 1px solid black;
     border-radius: 5px;
     padding: 1rem;
 }
+
 .projects-card a {
     color: white;
     text-decoration: none;
 }
+
 .projects-card a:hover {
-    text-decoration:none;
+    text-decoration: none;
     color: bisque;
+}
+
+@media screen and (max-width: 768px) {
+
+    #skills-list,
+    #hobbies-list {
+        grid-template-columns: 1fr;
+    }
+
+    #navbar {
+        position: relative;
+    }
+
+    #nav-list {
+        flex-direction: column;
+        align-items: center;
+        gap: 5px;
+        font-size: 2rem;
+    }
+
+    .nav-items {
+        width: 200px;
+        border: 2px solid black;
+        text-align: center;
+        border-radius: 10px;
+    }
 }

@@ -35,7 +35,7 @@ const Skills = () => {
 
                     {/* 1. Kutu: Ana Frontend Stack (Büyük Kare - 2x1) */}
                     <ScrollReveal className="md:col-span-2" direction="up" delay={0.1}>
-                        <div className="h-full rounded-3xl bg-linear-to-br from-white/80 to-orange-50/50 dark:from-slate-900/80 dark:to-slate-800/80 backdrop-blur-xl border border-orange-200/30 hover:border-orange-400/50 transition-all duration-300 hover:shadow-2xl hover:shadow-orange-500/10 group overflow-hidden relative" style={{ padding: '1.75rem' }}>
+                        <div className="h-full rounded-3xl bg-linear-to-br from-white/80 to-orange-50/50 dark:from-slate-900/80 dark:to-slate-800/70 backdrop-blur-xl border border-orange-200/30 hover:border-orange-400/50 transition-all duration-300 hover:shadow-2xl hover:shadow-orange-500/10 group overflow-hidden relative" style={{ padding: '1.75rem' }}>
                             <div className="absolute -top-16 -right-16 w-40 h-40 bg-linear-to-br from-primary/20 to-secondary/20 rounded-full blur-3xl group-hover:scale-125 transition-all duration-700" />
                             <div className="absolute -bottom-16 -left-16 w-40 h-40 bg-linear-to-tr from-accent/10 to-primary/10 rounded-full blur-3xl group-hover:scale-125 transition-all duration-700" />
                             <div className="relative z-10 h-full flex flex-col justify-between">
@@ -61,7 +61,7 @@ const Skills = () => {
 
                     {/* 2. Kutu: TypeScript (Dikey Kutu) */}
                     <ScrollReveal className="md:col-start-3 md:col-span-2 md:row-start-1" direction="up" delay={0.2}>
-                        <div className="h-full rounded-3xl bg-linear-to-b from-blue-50/60 to-indigo-50/60 dark:from-slate-800/60 dark:to-slate-900/60 backdrop-blur-xl border border-blue-200/40 dark:border-blue-900/30 hover:border-blue-400 hover:shadow-xl hover:shadow-blue-500/10 transition-all duration-300 hover:-translate-y-1 flex flex-col items-center justify-center text-center group" style={{ padding: '2rem' }}>
+                        <div className="h-full rounded-3xl bg-linear-to-b from-blue-50/60 to-indigo-50/60 dark:from-slate-900/80 dark:to-slate-800/70 backdrop-blur-xl border border-blue-200/40 dark:border-blue-900/30 hover:border-blue-400 hover:shadow-xl hover:shadow-blue-500/10 transition-all duration-300 hover:-translate-y-1 flex flex-col items-center justify-center text-center group" style={{ padding: '2rem' }}>
                             <div className="bg-linear-to-br from-blue-600 to-indigo-600 w-24 h-24 rounded-3xl flex items-center justify-center text-white mb-6 shadow-xl shadow-blue-500/30 group-hover:scale-110 group-hover:rotate-12 transition-transform duration-500 ease-out">
                                 <span className="text-4xl font-bold">TS</span>
                             </div>
@@ -89,21 +89,21 @@ const Skills = () => {
 
                     {/* 4. Kutu: DevOps (Kare) */}
                     <ScrollReveal className="md:col-start-4 md:row-start-2" direction="up" delay={0.4}>
-                        <div className="h-full rounded-3xl bg-linear-to-br from-white/70 to-green-50/50 dark:from-slate-900/70 dark:to-slate-800/70 backdrop-blur-xl border border-green-200/40 hover:border-green-400/60 hover:shadow-xl hover:shadow-green-500/10 transition-all duration-300 hover:-translate-y-1 group flex flex-col justify-center" style={{ padding: '1.5rem' }}>
-                            <div className="flex items-center gap-2 mb-3">
+                        <div className="h-full rounded-3xl bg-linear-to-br from-white/70 to-green-50/50 dark:from-slate-900/70 dark:to-slate-800/70 backdrop-blur-xl border border-green-200/40 hover:border-green-400/60 hover:shadow-xl hover:shadow-green-500/10 transition-all duration-300 hover:-translate-y-1 group grid place-items-center text-center" style={{ padding: '1.5rem' }}>
+                            <div className="flex items-center justify-center gap-2 mb-4">
                                 <div className="bg-linear-to-br from-green-600 to-emerald-600 rounded-lg shadow-lg shadow-green-500/30 group-hover:rotate-12 transition-transform duration-300" style={{ padding: '0.5rem' }}>
                                     <GitBranch className="text-white" size={20} />
                                 </div>
                                 <h3 className="text-base font-bold text-dark dark:text-white">DevOps & Tools</h3>
                             </div>
-                            <ul className="space-y-2 text-warm/80 dark:text-slate-400 text-xs">
-                                <li className="flex items-center gap-2">
+                            <ul className="space-y-2 text-warm/80 dark:text-slate-400 text-l">
+                                <li className="flex items-center justify-center gap-2">
                                     <div className="w-1.5 h-1.5 rounded-full bg-linear-to-r from-green-500 to-emerald-500 shadow-[0_0_6px_rgba(34,197,94,0.5)]" /> Git / GitHub
                                 </li>
-                                <li className="flex items-center gap-2">
+                                <li className="flex items-center justify-center gap-2">
                                     <div className="w-1.5 h-1.5 rounded-full bg-linear-to-r from-green-500 to-emerald-500 shadow-[0_0_6px_rgba(34,197,94,0.5)]" /> Postman
                                 </li>
-                                <li className="flex items-center gap-2">
+                                <li className="flex items-center justify-center gap-2">
                                     <div className="w-1.5 h-1.5 rounded-full bg-linear-to-r from-green-500 to-emerald-500 shadow-[0_0_6px_rgba(34,197,94,0.5)]" /> Testing
                                 </li>
                             </ul>
@@ -112,7 +112,7 @@ const Skills = () => {
 
                     {/* 5. Kutu: Dil (Yatay Geniş) */}
                     <ScrollReveal className="md:col-span-2 md:row-start-2" direction="up" delay={0.5}>
-                        <div className="h-full rounded-3xl bg-linear-to-r from-amber-50/60 to-orange-50/60 dark:from-slate-800/60 dark:to-slate-900/60 backdrop-blur-xl border border-amber-200/40 dark:border-amber-900/30 hover:border-amber-400 hover:shadow-xl hover:shadow-amber-500/10 transition-all duration-300 hover:-translate-y-1 flex items-center gap-6 group" style={{ padding: '1.75rem' }}>
+                        <div className="h-full rounded-3xl bg-linear-to-r from-amber-50/60 to-orange-50/60 dark:from-slate-900/70 dark:to-slate-900/60 backdrop-blur-xl border border-amber-200/40 dark:border-amber-900/30 hover:border-amber-400 hover:shadow-xl hover:shadow-amber-500/10 transition-all duration-300 hover:-translate-y-1 flex items-center gap-6 group" style={{ padding: '1.75rem' }}>
                             <div className="bg-linear-to-br from-amber-600 to-orange-600 rounded-2xl shadow-lg shadow-amber-500/30 group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300 shrink-0" style={{ padding: '1rem' }}>
                                 <Globe className="text-white" size={36} />
                             </div>

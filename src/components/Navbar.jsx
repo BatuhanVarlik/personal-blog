@@ -11,9 +11,7 @@ const Navbar = () => {
         const handleScroll = () => {
             setScrolled(window.scrollY > 50);
 
-            // Hangi bölümde olduğumuzu algılayan basit mantık
             const sections = ["hakkımda", "yetenekler", "deneyim", "projeler"];
-
             const current = sections.find(section => {
                 const element = document.getElementById(section);
                 if (element) {
@@ -38,9 +36,6 @@ const Navbar = () => {
 
     return (
         <>
-            {/* HATANIN ÇÖZÜMÜ BURADA:
-                Normal <nav> yerine <motion.nav> kullanıyoruz.
-            */}
             <motion.nav
                 initial={{ y: -100, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
@@ -58,17 +53,31 @@ const Navbar = () => {
                         border border-white/20 dark:border-white/10 rounded-full
                     `}
                     style={{
-                        paddingTop: scrolled ? '0.75rem' : '1.25rem',
-                        paddingBottom: scrolled ? '0.75rem' : '1.25rem',
+                        paddingTop: scrolled ? '0.5rem' : '0.75rem', // Dikey paddingi biraz azalttık ki resim taşsın
+                        paddingBottom: scrolled ? '0.5rem' : '0.75rem',
                         paddingLeft: scrolled ? '1.5rem' : '2rem',
                         paddingRight: scrolled ? '1.5rem' : '2rem'
                     }}
                 >
-                    {/* Logo */}
-                    <a href="#" className="flex items-center gap-2 group shrink-0" style={{ paddingRight: scrolled ? '0.5rem' : '1rem' }}>
-                        <div className="w-8 h-8 rounded-full bg-linear-to-tr from-indigo-500 to-purple-500 flex items-center justify-center text-white font-bold text-sm shadow-lg group-hover:scale-110 transition-transform">
-                            BV
+                    {/* --- 1. DEĞİŞİKLİK: LOGO FOTOĞRAFI --- */}
+                    <a href="#" className="flex items-center gap-3 group shrink-0 relative">
+                        {/* Buraya kendi fotoğrafının yolunu yazmalısın. Örn: "/images/profile.jpg"
+                           -margin vererek navbarın sınırlarından hafifçe taşmasını sağladık (pop-out effect).
+                        */}
+                        <div className="relative">
+                            <img
+                                src="https://github.com/BatuhanVarlik.png"
+                                alt="Batuhan Varlık"
+                                className={`
+                                    rounded-full object-cover border-2 border-white dark:border-slate-800 shadow-md transition-all duration-300
+                                    ${scrolled ? "w-12 h-12" : "w-14 h-14 md:w-16 md:h-16"} 
+                                    group-hover:scale-110
+                                `}
+                            />
+                            {/* Online durumu belirteci (Opsiyonel süs) */}
+                            <span className="absolute bottom-0 right-0 w-3 h-3 bg-green-500 border-2 border-white rounded-full"></span>
                         </div>
+
                         <span className={`font-bold text-lg tracking-tight ${scrolled ? "hidden" : "block"} text-slate-800 dark:text-white `}>
                             Batuhan Varlık
                         </span>
@@ -95,7 +104,6 @@ const Navbar = () => {
                                     paddingBottom: '0.625rem'
                                 }}
                             >
-                                {/* Aktif sekme animasyonu için motion.div */}
                                 {activeSection === item.name.toLowerCase() && (
                                     <motion.div
                                         layoutId="activeTab"
@@ -120,13 +128,13 @@ const Navbar = () => {
                             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
                             className="md:hidden p-2 rounded-full hover:bg-black/5 dark:hover:bg-white/10 text-slate-800 dark:text-white transition-colors"
                         >
-                            {mobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
+                            {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
                         </button>
                     </div>
                 </div>
             </motion.nav>
 
-            {/* Mobil Menü Dropdown - motion kullanımı */}
+            {/* --- 2. DEĞİŞİKLİK: MOBİL MENÜ HİZALAMA --- */}
             <AnimatePresence>
                 {mobileMenuOpen && (
                     <motion.div
@@ -134,23 +142,25 @@ const Navbar = () => {
                         animate={{ opacity: 1, y: 0, scale: 1 }}
                         exit={{ opacity: 0, y: -20, scale: 0.95 }}
                         transition={{ duration: 0.2 }}
-                        className="fixed top-24 left-4 right-4 z-40 md:hidden"
+                        className="fixed top-28 left-4 right-4 z-40 md:hidden"
                     >
-                        <div className="bg-white/90 dark:bg-slate-900/90 backdrop-blur-xl border border-white/20 rounded-2xl shadow-2xl p-4 flex flex-col gap-2">
+                        {/* flex-col ve items-center ile her şeyi ortalıyoruz */}
+                        <div className="bg-white/95 dark:bg-slate-900/95 backdrop-blur-xl border border-white/20 rounded-3xl shadow-2xl p-6 flex flex-col items-center justify-center gap-4">
                             {navLinks.map((item) => (
                                 <a
                                     key={item.name}
                                     href={item.href}
                                     onClick={() => setMobileMenuOpen(false)}
-                                    className="p-3 rounded-xl hover:bg-indigo-50 dark:hover:bg-indigo-900/20 text-slate-700 dark:text-slate-200 font-medium transition-colors"
+                                    // text-center ve w-full verdik, ayrıca text boyutunu biraz büyüttük (text-lg)
+                                    className="block w-full text-center p-3 rounded-2xl hover:bg-indigo-50 dark:hover:bg-indigo-900/20 text-slate-800 dark:text-slate-100 font-semibold text-lg transition-colors"
                                 >
                                     {item.name}
                                 </a>
                             ))}
-                            <div className="flex justify-center gap-4 mt-4 pt-4 border-t border-gray-100 dark:border-gray-800">
-                                <SocialLink href="https://github.com/BatuhanVarlik" icon={<Github size={20} />} />
-                                <SocialLink href="https://linkedin.com/in/batuhanvarlik/" icon={<Linkedin size={20} />} />
-                                <SocialLink href="mailto:batuhanvarlik@hotmail.com" icon={<Mail size={20} />} />
+                            <div className="flex justify-center gap-6 mt-2 pt-4 border-t border-gray-100 w-full dark:border-gray-800">
+                                <SocialLink href="https://github.com/BatuhanVarlik" icon={<Github size={24} />} />
+                                <SocialLink href="https://linkedin.com/in/batuhanvarlik/" icon={<Linkedin size={24} />} />
+                                <SocialLink href="mailto:batuhanvarlik@hotmail.com" icon={<Mail size={24} />} />
                             </div>
                         </div>
                     </motion.div>
@@ -160,7 +170,6 @@ const Navbar = () => {
     );
 };
 
-// Yardımcı bileşen
 const SocialLink = ({ href, icon }) => (
     <a
         href={href}

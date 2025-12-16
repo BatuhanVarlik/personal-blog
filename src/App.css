@@ -1,0 +1,53 @@
+/* App CSS - Custom Styles */
+
+/* Container */
+.container {
+  max-width: 80rem;
+  margin: 0 auto;
+}
+
+/* Responsive Padding */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 1rem;
+  }
+}
+
+/* Custom Animations */
+@keyframes gradient-shift {
+
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes float-up {
+  0% {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.float-up {
+  animation: float-up 0.6s ease-out;
+}
+
+/* Global Link Styles */
+a {
+  transition: color 0.3s ease;
+}
+
+/* Section Spacing */
+section {
+  scroll-margin-top: 5rem;
+}

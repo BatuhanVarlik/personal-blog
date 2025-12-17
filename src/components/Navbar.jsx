@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
+// eslint-disable-next-line no-unused-vars
 import { motion, AnimatePresence } from "framer-motion";
 import { Github, Linkedin, Mail, Menu, X } from "lucide-react";
-
+import { navLinks } from "../components/constants"
 const Navbar = () => {
     const [scrolled, setScrolled] = useState(false);
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -27,12 +28,6 @@ const Navbar = () => {
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
 
-    const navLinks = [
-        { name: "Hakkımda", href: "#hakkımda" },
-        { name: "Yetenekler", href: "#yetenekler" },
-        { name: "Deneyim", href: "#deneyim" },
-        { name: "Projeler", href: "#projeler" },
-    ];
 
     return (
         <>

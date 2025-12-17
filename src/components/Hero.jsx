@@ -5,7 +5,7 @@ import {
     FileCode, Globe, Braces, GitBranch, Palette,
     Layout, Server, TestTube, FileJson, Mail, Database
 } from "lucide-react";
-
+import { navLinks } from "../components/constants";
 // Floating widget data for tech skills - positioned on edges to avoid center content
 const floatingWidgets = [
     // Left side widgets
@@ -24,6 +24,7 @@ const floatingWidgets = [
     { label: "Postman", icon: Mail, color: "orange", delay: 1.4, position: "bottom-60 right-4 lg:right-12" },
 ];
 
+const navProjeler = navLinks.find(link => link.name === "Projeler")?.href || "#projeler";
 const colorClasses = {
     orange: "bg-orange-100 text-orange-600 border-orange-200/50",
     yellow: "bg-yellow-100 text-yellow-600 border-yellow-200/50",
@@ -118,13 +119,18 @@ const Hero = () => {
                         <div className="flex flex-col sm:flex-row justify-center gap-4 w-full sm:w-auto px-4">
                             <button className="group rounded-2xl bg-linear-to-r from-primary to-secondary text-white font-semibold transition-all duration-300 shadow-glow hover:shadow-xl hover:scale-105 hover:-translate-y-1" style={{ paddingLeft: '3rem', paddingRight: '3rem', paddingTop: '1rem', paddingBottom: '1rem' }}>
                                 <span className="flex items-center justify-center gap-3 text-sm sm:text-base">
-                                    <span>Projelerimi Gör</span>
+                                    <a href={navProjeler}>Projelerime Git</a>
                                     <FileText size={16} className="group-hover:rotate-12 transition-transform shrink-0" />
                                 </span>
                             </button>
-                            <button className="rounded-2xl bg-white/80 backdrop-blur-md border border-stone-200 text-dark font-semibold hover:bg-white hover:shadow-warm transition-all duration-300 hover:scale-105 hover:-translate-y-1 text-sm sm:text-base" style={{ paddingLeft: '3rem', paddingRight: '3rem', paddingTop: '1rem', paddingBottom: '1rem' }}>
+                            <a
+                                href="/batuhan-varlik-cv.pdf"
+                                download="Batuhan Varlik CV.pdf"
+                                className="rounded-2xl bg-white/80 backdrop-blur-md border border-stone-200 text-dark font-semibold hover:bg-white hover:shadow-warm transition-all duration-300 hover:scale-105 hover:-translate-y-1 text-sm sm:text-base inline-block"
+                                style={{ paddingLeft: '3rem', paddingRight: '3rem', paddingTop: '1rem', paddingBottom: '1rem' }}
+                            >
                                 CV İndir
-                            </button>
+                            </a>
                         </div>
                     </ScrollReveal>
                 </div>
